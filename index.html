@@ -3,191 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بوابة نتيجة الثانوية العامة</title>
+<title>نتيجة طلاب الثانوية العامة - 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --maroon-900:#3B0F1A;
-    --maroon-700:#5A1826;
-    --gold-500:#B8892B;
-    --gold-300:#D9B36F;
-    --cream-50:#F6EFDD;
-    --cream-100:#EFE4C8;
-    --ink-800:#241512;
-    --ink-500:#5B4A42;
-    --green-600:#2F6B4F;
-    --green-100:#E1EEE6;
-    --amber-600:#9C6B1E;
-    --amber-100:#F1E4C4;
-    --red-600:#9B3A34;
-    --red-100:#F3E1DF;
+    --bg:#E7E9F2;
+    --card:#FFFFFF;
+    --ink-900:#1F2333;
+    --ink-500:#8A8FA3;
+    --red-600:#C21F3A;
+    --red-700:#A81830;
+    --green-600:#1C9B57;
+    --green-700:#15824A;
+    --shadow-red: rgba(194,31,58,.28);
+    --shadow-green: rgba(28,155,87,.28);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background:var(--cream-50);
-    color:var(--ink-800);
+    background:var(--bg);
+    color:var(--ink-900);
     font-family:'Tajawal',sans-serif;
     min-height:100vh;
+    padding:28px 16px 60px;
   }
-  .top-band{
-    background:
-      radial-gradient(1200px 400px at 50% -200px, var(--maroon-700), var(--maroon-900) 70%);
-    color:var(--cream-50);
-    padding:56px 20px 80px;
-    position:relative;
-    overflow:hidden;
-  }
-  .top-band::after{
-    content:"";
-    position:absolute; left:0; right:0; bottom:0; height:10px;
-    background-image:
-      linear-gradient(135deg, var(--gold-500) 25%, transparent 25%),
-      linear-gradient(225deg, var(--gold-500) 25%, transparent 25%),
-      linear-gradient(45deg, var(--gold-500) 25%, transparent 25%),
-      linear-gradient(315deg, var(--gold-500) 25%, transparent 25%);
-    background-position: 10px 0, 10px 0, 0 0, 0 0;
-    background-size: 20px 20px;
-    background-repeat: repeat-x;
-    opacity:.85;
-  }
-  .brand{
-    max-width:760px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .brand .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:13px; letter-spacing:.5px; color:var(--gold-300, #E8CE8E);
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(216,178,110,.4);
-    padding:6px 16px; border-radius:999px;
+  .wrap{ max-width:720px; margin:0 auto; }
+
+  .panel{
+    background:var(--card);
+    border-radius:26px;
+    padding:34px 24px;
+    box-shadow:0 18px 40px -18px rgba(31,35,51,.18);
     margin-bottom:22px;
   }
-  .brand h1{
-    font-family:'Aref Ruqaa', serif;
-    font-weight:700;
-    font-size:44px;
-    margin:0 0 10px;
-    line-height:1.3;
-  }
-  .brand p.sub{
-    color:#DCCDBF;
-    font-size:15px;
-    margin:0 0 34px;
-  }
 
-  .search-card{
-    max-width:640px;
-    margin:-56px auto 0;
-    background:var(--cream-50);
-    border:1px solid var(--cream-100);
-    border-radius:18px;
-    box-shadow:0 30px 60px -20px rgba(59,15,26,.35), 0 2px 0 rgba(184,137,43,.25) inset;
-    padding:26px;
-    position:relative;
-    z-index:2;
-  }
-  .tabs{
-    display:flex;
-    background:var(--cream-100);
-    border-radius:12px;
-    padding:4px;
-    margin-bottom:18px;
-    gap:4px;
-  }
-  .tab{
-    flex:1;
+  .title{
     text-align:center;
-    padding:10px 8px;
-    border-radius:9px;
-    font-weight:700;
-    font-size:14px;
-    cursor:pointer;
-    color:var(--ink-500);
-    transition:background .2s, color .2s;
-    user-select:none;
-  }
-  .tab.active{
-    background:var(--maroon-900);
-    color:var(--cream-50);
-  }
-  .field{
+    font-size:28px;
+    font-weight:900;
+    margin:0 0 8px;
     display:flex;
+    align-items:center;
+    justify-content:center;
     gap:10px;
   }
-  input[type=text], input[type=tel]{
+  .subtitle{
+    text-align:center;
+    color:var(--ink-500);
+    font-size:14px;
+    margin:0 0 30px;
+  }
+
+  .stats-row{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:26px;
+  }
+  .stat-card{
     flex:1;
-    border:1.5px solid var(--cream-100);
-    background:#fff;
-    padding:14px 16px;
-    border-radius:12px;
-    font-family:'Tajawal',sans-serif;
-    font-size:16px;
-    color:var(--ink-800);
-    outline:none;
-    transition:border-color .2s;
+    min-width:140px;
+    max-width:180px;
+    border-radius:18px;
+    padding:22px 14px;
+    text-align:center;
+    color:#fff;
   }
-  input[type=text]:focus, input[type=tel]:focus{
-    border-color:var(--gold-500);
+  .stat-card.red{
+    background:linear-gradient(160deg, var(--red-600), var(--red-700));
+    box-shadow:0 16px 30px -14px var(--shadow-red);
   }
-  button.go{
-    background:var(--maroon-900);
-    color:var(--cream-50);
+  .stat-card.green{
+    background:linear-gradient(160deg, var(--green-600), var(--green-700));
+    box-shadow:0 16px 30px -14px var(--shadow-green);
+  }
+  .stat-icon{
+    width:34px; height:34px;
+    border-radius:50%;
+    background:rgba(255,255,255,.22);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 12px;
+  }
+  .stat-icon svg{ width:16px; height:16px; }
+  .stat-number{
+    font-size:24px;
+    font-weight:900;
+    direction:ltr;
+    margin-bottom:4px;
+  }
+  .stat-pct{
+    font-size:13px;
+    font-weight:700;
+    opacity:.9;
+    margin-bottom:6px;
+    direction:ltr;
+  }
+  .stat-label{
+    font-size:13px;
+    font-weight:500;
+    opacity:.95;
+  }
+
+  .top-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    background:linear-gradient(160deg, var(--red-600), var(--red-700));
+    color:#fff;
     border:none;
-    padding:0 24px;
-    border-radius:12px;
+    border-radius:16px;
+    padding:16px;
     font-family:'Tajawal',sans-serif;
     font-weight:700;
     font-size:15px;
     cursor:pointer;
-    transition:background .2s, transform .05s;
+    box-shadow:0 16px 30px -16px var(--shadow-red);
+    transition:transform .05s, filter .2s;
   }
-  button.go:hover{ background:var(--maroon-700); }
+  .top-btn:hover{ filter:brightness(1.05); }
+  .top-btn:active{ transform:scale(.98); }
+
+  .search-panel{
+    display:flex;
+    gap:12px;
+  }
+  #q{
+    flex:1;
+    border:none;
+    background:#F0F1F6;
+    border-radius:14px;
+    padding:16px 18px;
+    font-family:'Tajawal',sans-serif;
+    font-size:15px;
+    color:var(--ink-900);
+    outline:none;
+  }
+  #q::placeholder{ color:var(--ink-500); }
+  #q:focus{ box-shadow:0 0 0 2px var(--red-600) inset; }
+
+  button.go{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(160deg, var(--red-600), var(--red-700));
+    color:#fff;
+    border:none;
+    padding:0 22px;
+    border-radius:14px;
+    font-family:'Tajawal',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 14px 26px -14px var(--shadow-red);
+    transition:transform .05s;
+  }
   button.go:active{ transform:scale(.97); }
   button.go:disabled{ opacity:.5; cursor:not-allowed; }
-  .hint{ font-size:12px; color:var(--ink-500); margin:10px 4px 0; }
+  button.go svg{ width:16px; height:16px; }
 
   .status-line{
-    max-width:640px;
-    margin:18px auto;
     text-align:center;
-    font-size:14px;
+    font-size:13px;
     color:var(--ink-500);
+    margin:14px 0 6px;
   }
   .progress-wrap{
-    max-width:420px;
-    margin:14px auto 0;
-    background:var(--cream-100);
+    max-width:320px;
+    margin:10px auto 0;
+    background:#DCDFEA;
     border-radius:999px;
-    height:8px;
+    height:7px;
     overflow:hidden;
   }
   .progress-bar{
     height:100%;
     width:0%;
-    background:linear-gradient(90deg, var(--gold-500), var(--maroon-700));
+    background:linear-gradient(90deg, var(--red-600), var(--green-600));
     transition:width .2s ease;
   }
 
-  .results-area{
-    max-width:640px;
-    margin:0 auto 80px;
-    padding:0 20px;
-  }
+  .results-area{ margin-top:20px; }
 
   .name-results{
-    background:#fff;
-    border:1px solid var(--cream-100);
-    border-radius:14px;
+    background:var(--card);
+    border-radius:18px;
     overflow:hidden;
-    margin-top:6px;
+    box-shadow:0 14px 30px -18px rgba(31,35,51,.2);
   }
   .name-result-row{
-    padding:14px 18px;
-    border-bottom:1px solid var(--cream-100);
+    padding:16px 18px;
+    border-bottom:1px solid #EEF0F5;
     cursor:pointer;
     display:flex;
     justify-content:space-between;
@@ -196,40 +206,38 @@
     transition:background .15s;
   }
   .name-result-row:last-child{ border-bottom:none; }
-  .name-result-row:hover{ background:var(--cream-50); }
+  .name-result-row:hover{ background:#F7F8FB; }
   .name-result-row .n{ font-weight:700; }
   .name-result-row .s{ font-size:13px; color:var(--ink-500); direction:ltr; }
 
   .result-card{
-    background:#fff;
-    border:1px solid var(--cream-100);
-    border-radius:20px;
+    background:var(--card);
+    border-radius:22px;
     padding:32px 26px;
     text-align:center;
-    box-shadow:0 20px 40px -24px rgba(59,15,26,.3);
-    animation:riseIn .45s ease both;
+    box-shadow:0 20px 40px -20px rgba(31,35,51,.22);
+    animation:riseIn .4s ease both;
   }
   @keyframes riseIn{
-    from{opacity:0; transform:translateY(14px);}
+    from{opacity:0; transform:translateY(12px);}
     to{opacity:1; transform:translateY(0);}
   }
-
-  .seal{
-    width:108px; height:108px;
-    margin:0 auto 18px;
-    animation:stampIn .5s cubic-bezier(.2,1.4,.4,1) both;
+  .badge{
+    width:64px; height:64px;
+    border-radius:50%;
+    margin:0 auto 16px;
+    display:flex; align-items:center; justify-content:center;
+    animation:pop .4s cubic-bezier(.2,1.4,.4,1) both;
   }
-  @keyframes stampIn{
-    0%{ opacity:0; transform:scale(1.8) rotate(-14deg); }
-    60%{ opacity:1; }
-    100%{ opacity:1; transform:scale(1) rotate(0deg); }
+  @keyframes pop{
+    0%{ opacity:0; transform:scale(.5); }
+    100%{ opacity:1; transform:scale(1); }
   }
-
+  .badge svg{ width:28px; height:28px; }
   .result-name{
-    font-family:'Aref Ruqaa', serif;
-    font-size:26px;
-    font-weight:700;
-    margin:4px 0 2px;
+    font-size:22px;
+    font-weight:900;
+    margin:0 0 4px;
   }
   .result-seating{
     color:var(--ink-500);
@@ -243,122 +251,215 @@
     justify-content:center;
     gap:14px;
     flex-wrap:wrap;
-    margin-top:6px;
   }
   .stat-box{
-    background:var(--cream-50);
-    border:1px solid var(--cream-100);
+    background:#F5F6FA;
     border-radius:14px;
     padding:14px 22px;
-    min-width:130px;
+    min-width:120px;
   }
   .stat-box .label{ font-size:12px; color:var(--ink-500); margin-bottom:4px; }
-  .stat-box .value{ font-size:22px; font-weight:900; direction:ltr; }
+  .stat-box .value{ font-size:20px; font-weight:900; direction:ltr; }
   .status-pill{
     display:inline-block;
     margin-top:18px;
-    padding:8px 20px;
+    padding:8px 22px;
     border-radius:999px;
     font-weight:700;
     font-size:14px;
+    color:#fff;
   }
-  .status-0{ background:var(--green-100); color:var(--green-600); }
-  .status-1{ background:var(--amber-100); color:var(--amber-600); }
-  .status-2{ background:var(--red-100); color:var(--red-600); }
-  .status-3{ background:var(--red-100); color:var(--red-600); }
+  .pill-pass{ background:var(--green-600); }
+  .pill-fail{ background:var(--red-600); }
 
   .empty-note{
     text-align:center;
     color:var(--ink-500);
-    padding:30px 10px;
+    padding:26px 10px;
     font-size:14px;
+    background:var(--card);
+    border-radius:18px;
+    box-shadow:0 14px 30px -18px rgba(31,35,51,.2);
   }
+
+  /* modal */
+  .overlay{
+    position:fixed; inset:0;
+    background:rgba(20,22,34,.55);
+    display:none;
+    align-items:flex-start;
+    justify-content:center;
+    padding:40px 16px;
+    z-index:50;
+    overflow-y:auto;
+  }
+  .overlay.open{ display:flex; }
+  .modal{
+    background:var(--card);
+    border-radius:22px;
+    max-width:560px;
+    width:100%;
+    padding:24px;
+    animation:riseIn .3s ease both;
+  }
+  .modal-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+  .modal-head h2{
+    font-size:18px;
+    margin:0;
+    display:flex; align-items:center; gap:8px;
+  }
+  .close-btn{
+    background:#F0F1F6;
+    border:none;
+    width:32px; height:32px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:16px;
+    color:var(--ink-500);
+  }
+  .top-list{ list-style:none; margin:0; padding:0; }
+  .top-list li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 8px;
+    border-bottom:1px solid #EEF0F5;
+  }
+  .top-list li:last-child{ border-bottom:none; }
+  .rank{
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--red-600);
+    color:#fff;
+    font-weight:900;
+    font-size:13px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .top-list .info{ flex:1; }
+  .top-list .info .n{ font-weight:700; font-size:14px; }
+  .top-list .info .s{ font-size:12px; color:var(--ink-500); direction:ltr; }
+  .top-list .deg{ font-weight:900; font-size:14px; direction:ltr; }
 
   footer{
     text-align:center;
     font-size:12px;
     color:var(--ink-500);
-    padding:20px;
+    padding:20px 10px 0;
   }
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:.001ms !important; }
   }
-
   @media (max-width:480px){
-    .brand h1{ font-size:32px; }
-    .search-card{ margin:-40px 14px 0; padding:20px; }
-    .field{ flex-direction:column; }
-    button.go{ padding:14px; }
+    .title{ font-size:22px; }
+    .panel{ padding:24px 16px; }
+    .search-panel{ flex-direction:column; }
+    button.go{ padding:14px; justify-content:center; }
   }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="top-band">
-  <div class="brand">
-    <span class="eyebrow">دور أول ٢٠٢٦ · نظام حديث</span>
-    <h1>بوابة نتيجة الثانوية العامة</h1>
-    <p class="sub">استعلم عن نتيجتك برقم الجلوس أو بالاسم</p>
+  <div class="panel">
+    <h1 class="title">🎓 نتيجة طلاب الثانوية العامة - 2026</h1>
+    <p class="subtitle">البحث عن نتائج طلاب الثانوية العامة - 2026</p>
+
+    <div class="stats-row">
+      <div class="stat-card red">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></div>
+        <div class="stat-number" id="failedCount">—</div>
+        <div class="stat-pct" id="failedPct">—</div>
+        <div class="stat-label">راسبون</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stat-number" id="passedCount">—</div>
+        <div class="stat-pct" id="passedPct">—</div>
+        <div class="stat-label">ناجحون</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#fff" stroke-width="2"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="9" r="2.4" stroke="#fff" stroke-width="1.8"/><path d="M15.5 20c.3-2.4 1.8-4 3.5-4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="stat-number" id="totalCount">—</div>
+        <div class="stat-pct">&nbsp;</div>
+        <div class="stat-label">إجمالي الطلاب</div>
+      </div>
+    </div>
+
+    <button class="top-btn" id="topBtn">قائمة أوائل الثانوية العامة 🏆</button>
   </div>
+
+  <div class="panel">
+    <div class="search-panel">
+      <input id="q" type="text" placeholder="رقم الجلوس أو الاسم بالعربية" />
+      <button id="go" class="go" disabled>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#fff" stroke-width="2.2"/><path d="M20 20l-4-4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+        البحث
+      </button>
+    </div>
+    <div class="status-line" id="statusLine">
+      جاري تجهيز قاعدة البيانات…
+      <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+    </div>
+  </div>
+
+  <div class="results-area" id="resultsArea"></div>
+
+  <footer>البيانات مأخوذة من ملف النتيجة الرسمي المرفوع لهذا الموقع. للاستخدام الشخصي فقط.</footer>
 </div>
 
-<div class="search-card">
-  <div class="tabs">
-    <div class="tab active" data-mode="seating">رقم الجلوس</div>
-    <div class="tab" data-mode="name">الاسم</div>
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>🏆 أوائل الثانوية العامة</h2>
+      <button class="close-btn" id="closeModal">✕</button>
+    </div>
+    <ul class="top-list" id="topList"><li>جاري التحميل…</li></ul>
   </div>
-  <div class="field">
-    <input id="q" type="tel" inputmode="numeric" placeholder="اكتب رقم الجلوس" />
-    <button id="go" class="go">بحث</button>
-  </div>
- 
 </div>
-
-<div class="status-line" id="statusLine">
-  جاري تجهيز قاعدة البيانات…
-  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
-</div>
-
-<div class="results-area" id="resultsArea"></div>
-
-<footer>البيانات مأخوذة من ملف النتيجة الرسمي المرفوع لهذا الموقع. للاستخدام الشخصي فقط.</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/sql.js@1.14.1/dist/sql-wasm.js"></script>
 <script>
 const STATUS_LABELS = ["ناجح دور أول","دور ثان","راسب دور أول","غياب كلى دور أول"];
+// Precomputed from the official dataset (919,396 students).
+// Fail/pass rates are calculated among students who actually sat the exam
+// (total minus full absentees), matching the standard official reporting method.
+const TOTAL_STUDENTS = 919396;
+const PASSED_COUNT = 650909;
+const FAILED_COUNT = 264036; // "دور ثان" + "راسب دور أول" (excludes full absence)
+const PRESENT = TOTAL_STUDENTS - 4451;
+const PASSED_PCT = (PASSED_COUNT / PRESENT * 100).toFixed(2);
+const FAILED_PCT = (FAILED_COUNT / PRESENT * 100).toFixed(2);
+
+document.getElementById('totalCount').textContent = TOTAL_STUDENTS.toLocaleString('en-US');
+document.getElementById('passedCount').textContent = PASSED_COUNT.toLocaleString('en-US');
+document.getElementById('failedCount').textContent = FAILED_COUNT.toLocaleString('en-US');
+document.getElementById('passedPct').textContent = PASSED_PCT + '%';
+document.getElementById('failedPct').textContent = FAILED_PCT + '%';
+
 let db = null;
-let mode = "seating";
 
 const qInput = document.getElementById('q');
 const goBtn = document.getElementById('go');
-const hint = document.getElementById('hint');
 const statusLine = document.getElementById('statusLine');
 const progressBar = document.getElementById('progressBar');
 const resultsArea = document.getElementById('resultsArea');
-const tabs = document.querySelectorAll('.tab');
-
-tabs.forEach(t => t.addEventListener('click', () => {
-  tabs.forEach(x => x.classList.remove('active'));
-  t.classList.add('active');
-  mode = t.dataset.mode;
-  if(mode === 'seating'){
-    qInput.type = 'tel';
-    qInput.inputMode = 'numeric';
-    qInput.placeholder = 'اكتب رقم الجلوس';
-    hint.textContent = 'مثال: 2001970';
-  } else {
-    qInput.type = 'text';
-    qInput.inputMode = 'text';
-    qInput.placeholder = 'اكتب الاسم كامل أو جزء منه';
-    
-  }
-  qInput.value = '';
-  resultsArea.innerHTML = '';
-}));
+const topBtn = document.getElementById('topBtn');
+const overlay = document.getElementById('overlay');
+const closeModal = document.getElementById('closeModal');
+const topList = document.getElementById('topList');
 
 qInput.addEventListener('keydown', e => { if(e.key === 'Enter') doSearch(); });
 goBtn.addEventListener('click', doSearch);
+topBtn.addEventListener('click', openTopList);
+closeModal.addEventListener('click', () => overlay.classList.remove('open'));
+overlay.addEventListener('click', e => { if(e.target === overlay) overlay.classList.remove('open'); });
 
 async function loadDb(){
   try{
@@ -392,66 +493,67 @@ async function loadDb(){
     console.error(err);
   }
 }
-goBtn.disabled = true;
 loadDb();
+
+function normalizeDigits(s){
+  return s.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+}
 
 function doSearch(){
   if(!db) return;
-  const val = qInput.value.trim();
+  const val = normalizeDigits(qInput.value.trim());
   resultsArea.innerHTML = '';
   if(!val) return;
 
-  if(mode === 'name'){
+  const isSeatingNo = /^\d+$/.test(val.replace(/\s+/g,''));
+  if(isSeatingNo){
+    runSeatingSearch(val);
+  } else {
     resultsArea.innerHTML = '<div class="empty-note">جاري البحث…</div>';
-    setTimeout(() => runSearch(val), 10);
-    return;
+    setTimeout(() => runNameSearch(val), 10);
   }
-  runSearch(val);
 }
 
-function runSearch(val){
+function runSeatingSearch(val){
+  const num = parseInt(val.replace(/[^\d]/g,''), 10);
   resultsArea.innerHTML = '';
-  if(mode === 'seating'){
-    const num = parseInt(val.replace(/[^\d]/g,''), 10);
-    if(isNaN(num)){
-      resultsArea.innerHTML = '<div class="empty-note">اكتب رقم جلوس صحيح</div>';
-      return;
-    }
-    const stmt = db.prepare("SELECT seating_no, name, total_degree, status FROM students WHERE seating_no = ?");
-    stmt.bind([num]);
-    if(stmt.step()){
-      renderResultCard(stmt.getAsObject());
-    } else {
-      resultsArea.innerHTML = '<div class="empty-note">لا توجد نتيجة بهذا الرقم. تأكد من رقم الجلوس.</div>';
-    }
-    stmt.free();
+  const stmt = db.prepare("SELECT seating_no, name, total_degree, status FROM students WHERE seating_no = ?");
+  stmt.bind([num]);
+  if(stmt.step()){
+    renderResultCard(stmt.getAsObject());
   } else {
-    const terms = val.split(/\s+/).filter(Boolean);
-    if(terms.length === 0) return;
-    try{
-      const whereClauses = terms.map(() => 'name LIKE ?').join(' AND ');
-      const params = terms.map(t => '%' + t + '%');
-      const stmt = db.prepare(`
-        SELECT seating_no, name, total_degree, status
-        FROM students
-        WHERE ${whereClauses}
-        LIMIT 30
-      `);
-      stmt.bind(params);
-      const rows = [];
-      while(stmt.step()) rows.push(stmt.getAsObject());
-      stmt.free();
+    resultsArea.innerHTML = '<div class="empty-note">لا توجد نتيجة بهذا الرقم. تأكد من رقم الجلوس.</div>';
+  }
+  stmt.free();
+}
 
-      if(rows.length === 0){
-        resultsArea.innerHTML = '<div class="empty-note">لا توجد نتائج مطابقة لهذا الاسم.</div>';
-      } else if(rows.length === 1){
-        renderResultCard(rows[0]);
-      } else {
-        renderNameList(rows);
-      }
-    }catch(err){
-      resultsArea.innerHTML = '<div class="empty-note">صيغة البحث غير صحيحة، جرّب اسمًا آخر.</div>';
+function runNameSearch(val){
+  resultsArea.innerHTML = '';
+  const terms = val.split(/\s+/).filter(Boolean);
+  if(terms.length === 0) return;
+  try{
+    const whereClauses = terms.map(() => 'name LIKE ?').join(' AND ');
+    const params = terms.map(t => '%' + t + '%');
+    const stmt = db.prepare(`
+      SELECT seating_no, name, total_degree, status
+      FROM students
+      WHERE ${whereClauses}
+      LIMIT 30
+    `);
+    stmt.bind(params);
+    const rows = [];
+    while(stmt.step()) rows.push(stmt.getAsObject());
+    stmt.free();
+
+    if(rows.length === 0){
+      resultsArea.innerHTML = '<div class="empty-note">لا توجد نتائج مطابقة. تأكد من كتابة الاسم أو رقم الجلوس بشكل صحيح.</div>';
+    } else if(rows.length === 1){
+      renderResultCard(rows[0]);
+    } else {
+      renderNameList(rows);
     }
+  }catch(err){
+    resultsArea.innerHTML = '<div class="empty-note">صيغة البحث غير صحيحة، جرّب اسمًا آخر.</div>';
   }
 }
 
@@ -473,35 +575,57 @@ function renderResultCard(r){
   const pct = ((r.total_degree/320)*100).toFixed(1);
   const statusIdx = r.status;
   const statusText = STATUS_LABELS[statusIdx] ?? '—';
-  const sealColor = statusIdx === 0 ? '#2F6B4F' : (statusIdx === 1 ? '#9C6B1E' : '#9B3A34');
-  const sealIcon = statusIdx === 0
-    ? '<path d="M27 46l12 12 26-28" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
-    : (statusIdx === 1
-      ? '<text x="50" y="60" font-size="34" fill="white" text-anchor="middle" font-family="Tajawal">٢</text>'
-      : '<path d="M32 32l36 36M68 32l-36 36" stroke="white" stroke-width="6" stroke-linecap="round"/>');
+  const isPass = statusIdx === 0;
+  const badgeColor = isPass ? '#1C9B57' : '#C21F3A';
+  const badgeIcon = isPass
+    ? '<path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>'
+    : '<path d="M6 6l12 12M18 6L6 18" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/>';
 
   resultsArea.innerHTML = `
     <div class="result-card">
-      <svg class="seal" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="46" fill="${sealColor}"/>
-        <circle cx="50" cy="50" r="46" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4 3" opacity=".6"/>
-        ${sealIcon}
-      </svg>
+      <div class="badge" style="background:${badgeColor}">
+        <svg viewBox="0 0 24 24" fill="none">${badgeIcon}</svg>
+      </div>
       <div class="result-name">${escapeHtml(r.name)}</div>
       <div class="result-seating">رقم الجلوس: ${r.seating_no}</div>
       <div class="stat-row">
         <div class="stat-box">
           <div class="label">المجموع</div>
-          <div class="value">${r.total_degree} <span style="font-size:13px;color:var(--ink-500)">/ 320</span></div>
+          <div class="value">${r.total_degree} <span style="font-size:12px;color:var(--ink-500)">/ 320</span></div>
         </div>
         <div class="stat-box">
           <div class="label">النسبة المئوية</div>
           <div class="value">${pct}%</div>
         </div>
       </div>
-      <div class="status-pill status-${statusIdx}">${statusText}</div>
+      <div class="status-pill ${isPass ? 'pill-pass' : 'pill-fail'}">${statusText}</div>
     </div>
   `;
+}
+
+function openTopList(){
+  overlay.classList.add('open');
+  if(!db){
+    topList.innerHTML = '<li>جاري تجهيز قاعدة البيانات، حاول بعد لحظات…</li>';
+    return;
+  }
+  topList.innerHTML = '<li>جاري التحميل…</li>';
+  setTimeout(() => {
+    const stmt = db.prepare("SELECT seating_no, name, total_degree FROM students ORDER BY total_degree DESC LIMIT 10");
+    const rows = [];
+    while(stmt.step()) rows.push(stmt.getAsObject());
+    stmt.free();
+    topList.innerHTML = rows.map((r, i) => `
+      <li>
+        <div class="rank">${i+1}</div>
+        <div class="info">
+          <div class="n">${escapeHtml(r.name)}</div>
+          <div class="s">${r.seating_no}</div>
+        </div>
+        <div class="deg">${r.total_degree}<span style="font-size:11px;color:var(--ink-500)"> / 320</span></div>
+      </li>
+    `).join('');
+  }, 10);
 }
 
 function escapeHtml(s){
